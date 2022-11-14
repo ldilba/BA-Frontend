@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IconsModule} from "./icons/icons.module";
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,8 @@
+<div class="container">
+  {{text1}}
+  <div class="toggle" (click)="toggleClick($event)">
+    <div [ngClass]="{'toggle-slider':true,'active': state}"></div>
+  </div>
+  {{text2}}
+</div>
+

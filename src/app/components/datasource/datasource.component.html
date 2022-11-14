@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="header">
+    <div class="header-text">
+      Data Source
+    </div>
+
+  </div>
+  <div class="container-toggle">
+    <app-toggle text1="File" text2="Text Input" (stateChangedEvent)="inputMethodChanged($event)"></app-toggle>
+  </div>
+
+  <app-datasource-upload></app-datasource-upload>
+</div>

@@ -1,0 +1,28 @@
+:host{
+  margin-top: 30px;
+  width: 90%;
+}
+.container{
+  border: 1px solid #9A9A9A;
+  display: flex;
+  border-radius: 5px;
+  background-color: #F1F1F1;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-align{
+  display: flex;
+  align-items: center;
+}
+.filename{
+  padding: 5px;
+}
+.file-icon{
+  color: #009898;
+  padding: 10px;
+}
+.filesize{
+  margin-right: 10px;
+}

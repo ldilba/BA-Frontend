@@ -1,0 +1,32 @@
+:host{
+  user-select: none;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.toggle{
+  background-color: #D9D9D9;
+  width: 40px;
+  height: 20px;
+  border-radius: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.toggle-slider{
+  background-color: #009898;
+  width: 20px;
+  height: 20px;
+  border-radius: 45px;
+  transition: margin-left 0.2s;
+
+}
+.active{
+  margin-left: 20px;
+  transition: margin-left 0.2s;
+}
