@@ -9,6 +9,8 @@ import { ToggleComponent } from './components/toggle/toggle.component';
 import {IconsModule} from "./icons/icons.module";
 import { DatasourceFileComponent } from './components/datasource/datasource.file/datasource.file.component';
 import { ButtonComponent } from './components/button/button.component';
+import { DatasourceInputComponent } from './components/datasource/datasource.input/datasource.input.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { ButtonComponent } from './components/button/button.component';
     DatasourceUploadComponent,
     ToggleComponent,
     DatasourceFileComponent,
-    ButtonComponent
+    ButtonComponent,
+    DatasourceInputComponent
   ],
-  imports: [
-    BrowserModule,
-    IconsModule
-  ],
+    imports: [
+        BrowserModule,
+        IconsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-datasource',
@@ -8,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class DatasourceComponent implements OnInit {
 
   inputMethod : boolean = false
+  @ViewChild('inputField') inputField: any;
+  @ViewChild('uploadField') uploadField: any;
 
   constructor() { }
 
   inputMethodChanged($event: boolean):void{
     this.inputMethod = $event
-    console.log("state changed to: "+ this.inputMethod)
+  }
+
+  upload(): void{
+    console.log(this.inputField.inputStr)
   }
 
   ngOnInit(): void {
