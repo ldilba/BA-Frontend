@@ -1,0 +1,21 @@
+:host{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.text-input{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  resize: none;
+  height: 206px;
+  width: 90%;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.text-input:focus{
+  outline: 1px solid #009898;
+  border: 1px solid #009898;
+}
