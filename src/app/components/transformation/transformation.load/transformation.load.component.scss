@@ -1,0 +1,55 @@
+:host{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-top: 20px;
+}
+.container{
+  display: flex;
+  width: 100%;
+}
+
+.container-request-type{
+  background-color: #D9D9D9;
+  padding: 8px;
+  border-radius: 5px;
+  color: #595959;
+  margin-left: 18px;
+  font-size: 15px;
+}
+.input-url{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  outline: none;
+  margin-left: 10px;
+  width: 80%;
+}
+.input-url:focus{
+  border: 1px solid #009898;
+  outline: 1px solid #009898;
+}
+
+.icon{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #009898;
+}
+.icon-right-align{
+  transform: translate(14px, 10px);
+}
+
+.container-right-align{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.button{
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.container-inline{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+}

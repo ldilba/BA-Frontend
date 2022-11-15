@@ -3,6 +3,13 @@
 }
 .base-layout{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+
+.icon{
+  margin-top: 200px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #009898;
 }

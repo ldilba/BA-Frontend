@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header">
+    <div class="header-text">
+      Transformation
+    </div>
+
+  </div>
+  <div class="container-toggle">
+    <app-toggle text1="Custom" text2="Load Transform" (stateChangedEvent)="inputMethodChanged($event)"></app-toggle>
+  </div>
+
+  <app-transformation-custom *ngIf="!inputMethod" #customField></app-transformation-custom>
+  <app-transformation-load *ngIf="inputMethod" #loadField></app-transformation-load>
+
+  <app-transformation-result></app-transformation-result>
+  <div class="button">
+    <app-button text="Save" icon="save" (click)="save()"></app-button>
+  </div>
+</div>

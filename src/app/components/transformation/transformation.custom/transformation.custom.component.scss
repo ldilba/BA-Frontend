@@ -1,0 +1,122 @@
+:host{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.text-input{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  color: #353535;
+  resize: vertical;
+  height: 75px;
+  width: 90%;
+  font-family: "Roboto Mono", sans-serif;
+  padding: 5px;
+  outline: none;
+  cursor: auto;
+  background-color: #F3F3F3;
+}
+
+.json-input{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  resize: vertical;
+  height: 125px;
+  width: 90%;
+  font-family: "Roboto Mono", sans-serif;
+  padding: 5px;
+
+  cursor: auto;
+  //background-color: #F3F3F3;
+}
+.json-input:focus{
+  outline: 1px solid #009898;
+  border: 1px solid #009898;
+}
+
+.icon{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #009898;
+}
+.icon-right-align{
+  transform: translate(14px, 10px);
+}
+
+.container-right-align{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.button{
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.container-inline{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+}
+
+//pre {
+//  display: flex;
+//  margin-top: 0;
+//  margin-bottom: 0;
+//  word-wrap: break-word;
+//
+//  code {
+//    flex: 1;
+//    line-height: 1.5em;
+//    font-size: 14px;
+//    min-height: 100%;
+//    padding: 1em 1.2em;
+//
+//    &.hljs-line-numbers {
+//      padding: 0 !important;
+//    }
+//  }
+//}
+//
+///** Line numbers styles */
+//.hljs {
+//  margin: 0 1em;
+//  padding: 10px;
+//  border: 1px solid gray;
+//  border-radius: 4px;
+//  transition: border ease 1s;
+//}
+//
+//.hljs-ln {
+//  padding: 8px 0;
+//
+//  tr {
+//    &:first-child td {
+//      padding-top: 8px !important;
+//    }
+//
+//    &:last-child td {
+//      padding-bottom: 8px !important;
+//    }
+//  }
+//}
+//
+///* for block of numbers */
+//td.hljs-ln-numbers {
+//  user-select: none;
+//  text-align: center;
+//  border-right: 1px solid gray;
+//  vertical-align: top;
+//  padding-right: 8px !important;
+//  padding-left: 8px !important;
+//}
+//
+///* for block of code */
+//td.hljs-ln-code {
+//  padding-left: 8px !important;
+//}
