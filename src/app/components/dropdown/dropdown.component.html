@@ -1,0 +1,3 @@
+<ng-select [(ngModel)]="selectedElement" (change)="change($event)" class="dropdown">
+  <ng-option *ngFor="let element of elements" [value]="element.service" class="option">{{element.name}}</ng-option>
+</ng-select>

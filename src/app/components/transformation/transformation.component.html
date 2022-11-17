@@ -9,6 +9,12 @@
     <app-toggle text1="Custom" text2="Load Transform" (stateChangedEvent)="inputMethodChanged($event)"></app-toggle>
   </div>
 
+  <div class="field-input">
+    <textarea [(ngModel)]="inputStr" readonly class="text-input"></textarea>
+    <i-feather name="arrow-down" class="icon"></i-feather>
+  </div>
+
+
   <app-transformation-custom *ngIf="!inputMethod" #customField></app-transformation-custom>
   <app-transformation-load *ngIf="inputMethod" #loadField></app-transformation-load>
 

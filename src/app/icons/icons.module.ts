@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { FeatherModule } from 'angular-feather';
-import {Upload, File, ArrowRight, Save, ArrowDown, Zap} from 'angular-feather/icons';
+import {Upload, File, ArrowRight, Save, ArrowDown, Zap, DownloadCloud, ChevronDown} from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
 const icons = {
@@ -10,7 +10,9 @@ const icons = {
   ArrowRight,
   ArrowDown,
   Save,
-  Zap
+  Zap,
+  DownloadCloud,
+  ChevronDown
 };
 
 @NgModule({

@@ -1,0 +1,11 @@
+:host{
+  width: 92%;
+  margin-top: 20px;
+}
+
+.ng-select.dropdown ::ng-deep .ng-select-container{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  background-color: white;
+  font-size: 15px;
+}

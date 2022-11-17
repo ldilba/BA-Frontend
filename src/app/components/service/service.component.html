@@ -3,9 +3,16 @@
     <div class="header-text">
       Service
     </div>
-
   </div>
+  <div class="content">
+    <app-dropdown [elements]="[{service: 'text-similarity', name:'Text Similarity Analysis'},
+    {service: 'text-recognition', name:'Text Recognition'}]" (changeEvent)="serviceSelected($event)"></app-dropdown>
+    <div class="container-params">
+      <span class="label-params">Params</span>
+    </div>
 
+    <app-table></app-table>
+  </div>
 
   <div class="button">
     <app-button text="Execute" icon="upload" (click)="execute()"></app-button>

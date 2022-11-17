@@ -1,24 +1,9 @@
 :host{
   display: flex;
-  margin-top: 20px;
   width: 100%;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-}
-.text-input{
-  border-radius: 5px;
-  border: 1px solid #9A9A9A;
-  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
-  color: #353535;
-  resize: vertical;
-  height: 75px;
-  width: 90%;
-  font-family: "Roboto Mono", sans-serif;
-  padding: 5px;
-  outline: none;
-  cursor: auto;
-  background-color: #F3F3F3;
 }
 
 .json-input{

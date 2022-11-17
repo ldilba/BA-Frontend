@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TransformationComponent implements OnInit {
 
   inputMethod : boolean = false
+  inputStr: string = 'What does the "yield" keyword do?\r\nHow to center a div?\r\nMerge two dicts in a single expression.';
 
   constructor() { }
 

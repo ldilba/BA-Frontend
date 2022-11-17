@@ -19,9 +19,13 @@ import {
 import {
   TransformationLoadComponent
 } from './components/transformation/transformation.load/transformation.load.component';
-import {HighlightModule, HIGHLIGHT_OPTIONS} from 'ngx-highlightjs';
+// import {HighlightModule, HIGHLIGHT_OPTIONS} from 'ngx-highlightjs';
 import { TransformationResultComponent } from './components/transformation/transformation.result/transformation.result.component';
 import { TransformationResultItemComponent } from './components/transformation/transformation.result/transformation.result.item/transformation.result.item.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { TableComponent } from './components/table/table.component';
+
 
 @NgModule({
   declarations: [
@@ -38,30 +42,33 @@ import { TransformationResultItemComponent } from './components/transformation/t
     TransformationCustomComponent,
     TransformationLoadComponent,
     TransformationResultComponent,
-    TransformationResultItemComponent
+    TransformationResultItemComponent,
+    DropdownComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     IconsModule,
     FormsModule,
-    HighlightModule
+    NgSelectModule
+    // HighlightModule
   ],
   providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        fullLibraryLoader: () => import('highlight.js'),
-        // coreLibraryLoader: () => import('highlight.js/lib/core'),
-        // lineNumbersLoader: () => import('highlightjs-line-numbers.js'), // Optional, only if you want the line numbers
-        // languages: {
-          // typescript: () => import('highlight.js/lib/languages/typescript'),
-          // css: () => import('highlight.js/lib/languages/css'),
-          // xml: () => import('highlight.js/lib/languages/xml')
-        //   json: () => import('highlight.js/lib/languages/json')
-        // },
-        themePath: 'node_modules/highlight.js/styles/github.css' // Optional, and useful if you want to change the theme dynamically
-      }
-    }
+    // {
+    //   provide: HIGHLIGHT_OPTIONS,
+    //   useValue: {
+    //     fullLibraryLoader: () => import('highlight.js'),
+    //     // coreLibraryLoader: () => import('highlight.js/lib/core'),
+    //     // lineNumbersLoader: () => import('highlightjs-line-numbers.js'), // Optional, only if you want the line numbers
+    //     // languages: {
+    //       // typescript: () => import('highlight.js/lib/languages/typescript'),
+    //       // css: () => import('highlight.js/lib/languages/css'),
+    //       // xml: () => import('highlight.js/lib/languages/xml')
+    //     //   json: () => import('highlight.js/lib/languages/json')
+    //     // },
+    //     themePath: 'node_modules/highlight.js/styles/github.css' // Optional, and useful if you want to change the theme dynamically
+    //   }
+    // }
   ],
   bootstrap: [AppComponent]
 })

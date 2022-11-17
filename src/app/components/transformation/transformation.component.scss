@@ -7,8 +7,16 @@
   box-shadow: 2px 2px 8px rgba(0,0,0,.15);
   //min-height: 600px;
   padding-bottom: 20px;
-}
 
+}
+.field-input{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
 .header{
   background-color: #F1F1F1;
   height: 50px;
@@ -35,4 +43,26 @@
   margin-right: 20px;
   display: flex;
   justify-content: end;
+}
+
+.icon{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #009898;
+}
+
+
+.text-input{
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  color: #353535;
+  resize: vertical;
+  height: 75px;
+  width: 90%;
+  font-family: "Roboto Mono", sans-serif;
+  padding: 5px;
+  outline: none;
+  cursor: auto;
+  background-color: #F3F3F3;
 }
