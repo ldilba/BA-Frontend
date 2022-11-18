@@ -1,1 +1,7 @@
-<p>table works!</p>
+<table class="table">
+  <tr class="tr" *ngFor="let i of rows; index as index">
+    <td [ngClass]="{'td':true, 'no-border':index==rows.length-1}"><input [(ngModel)]="i.param" class="input"></td>
+    <td [ngClass]="{'td2':true, 'no-border':index==rows.length-1}"><input [(ngModel)]="i.value" class="input"></td>
+  </tr>
+</table>
+<i-feather name="plus-square" class="icon" (click)="addRow()"></i-feather>
