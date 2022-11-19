@@ -24,12 +24,11 @@
   user-select: none;
 }
 
-.button{
-  margin-top: 20px;
+.button-execute{
+  margin-top: -40px;
   margin-right: 20px;
   display: flex;
   justify-content: end;
-
 }
 
 .content{
@@ -46,4 +45,45 @@
 .label-params{
   margin-left: 20px;
   color: #727272;
+}
+
+.container-requests{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container-spinner{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.span-requests{
+  margin-left: 10px;
+  color: #009898;
+}
+
+.container-results{
+  margin-top: 20px;
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 300px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+  border-radius: 5px;
+  width: 92%;
+  border: 1px solid #9A9A9A;
+  background-color: #F3F3F3;
+}
+
+.button-download{
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: end;
 }

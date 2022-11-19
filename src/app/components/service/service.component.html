@@ -12,9 +12,33 @@
     </div>
 
     <app-table></app-table>
+
+    <div class="container-requests">
+      <div class="container-spinner">
+        <ngx-spinner class="spinner" bdColor="rgba(0,0,0,0)" size="default" color="#009898" type="ball-clip-rotate-multiple"
+                     [fullScreen]="false"></ngx-spinner>
+      </div>
+      <span *ngIf="queryRunning" class="span-requests">{{currentResponses}} / {{expectedResponses}}</span>
+    </div>
+
+
   </div>
-<!--  <app-table></app-table>-->
-  <div class="button">
-    <app-button text="Execute" icon="upload" (click)="execute()"></app-button>
+  <div class="button-execute">
+    <app-button text="Execute" icon="play" (click)="execute()"></app-button>
+  </div>
+
+  <div class="container-results">
+    <app-service-result title='What does the "yield" keyword do in Python?'
+                        link="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python"
+                        content="To understand what yield does, you must understand what generators are.
+                        And before you can understand generators, you must understand iterables..."></app-service-result>
+    <app-service-result title='What does the "yield" keyword do in Python?'
+                        link="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python"
+                        content="To understand what yield does, you must understand what generators are.
+                        And before you can understand generators, you must understand iterables..."></app-service-result>
+  </div>
+
+  <div class="button-download">
+    <app-button text="Download" icon="download"></app-button>
   </div>
 </div>
