@@ -21,11 +21,14 @@ export class DatasourceComponent implements OnInit, DoCheck {
   }
 
   upload(): void {
-    if (this.inputMethod) {
-      this.datasourceService.uploadFile(this.inputField.inputStr)
-    } else {
-      this.datasourceService.uploadText(this.inputField.inputStr)
+    if(!this.datasourceService.isLoading){
+      if (this.inputMethod) {
+        this.datasourceService.uploadFile(this.inputField.inputStr)
+      } else {
+        this.datasourceService.uploadText(this.inputField.inputStr)
+      }
     }
+
 
   }
 
@@ -33,10 +36,16 @@ export class DatasourceComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    if (this.datasourceService.isLoading) {
+    if (this.datasourceService.isLoading && !this.datasourceService.isSpinnerTriggered) {
+      console.log("show datasource spinner")
       this.spinner.show("datasource-spinner");
-    } else {
-      this.spinner.hide("datasource-spinner");
+      this.datasourceService.isSpinnerTriggered = true
+    } else if(!this.datasourceService.isLoading && !this.datasourceService.isSpinnerTriggered){
+      setTimeout(()=>{
+        this.spinner.hide("datasource-spinner");
+      }, 300)
+
+      this.datasourceService.isSpinnerTriggered = true
     }
   }
 

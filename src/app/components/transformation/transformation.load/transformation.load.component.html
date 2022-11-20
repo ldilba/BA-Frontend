@@ -2,7 +2,7 @@
   <div class="container-request-type">
     GET
   </div>
-  <input class="input-url" placeholder="http://...">
+  <input class="input-url" placeholder="http://..." [(ngModel)]="inputUrl">
 </div>
 
 <div class="container-inline">
@@ -10,6 +10,6 @@
     <i-feather name="arrow-down" class="icon icon-right-align"></i-feather>
   </div>
   <div class="container-right-align">
-    <app-button class="button" text="Transform" icon="zap" (click)="load()"></app-button>
+    <app-button class="button" text="Transform" icon="zap" (click)="transform()"></app-button>
   </div>
 </div>

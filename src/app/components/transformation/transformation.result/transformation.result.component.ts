@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-transformation-result',
@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transformation.result.component.scss']
 })
 export class TransformationResultComponent implements OnInit {
-  results: string[] =
-    ['What does the "yield" keyword do?',
-    'How to center a div?',
-    'Merge two dicts in a single expression.']
+  @Input() results: string[] = []
 
   constructor() { }
 

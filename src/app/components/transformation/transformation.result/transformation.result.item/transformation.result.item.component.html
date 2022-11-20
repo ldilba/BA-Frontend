@@ -1,4 +1,4 @@
 <div class="container">
-  {{text}}
+  {{text.slice(0,48)}}<span *ngIf="text.length > 48">...</span>
 </div>
 

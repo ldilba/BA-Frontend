@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-transformation-load',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transformation.load.component.scss']
 })
 export class TransformationLoadComponent implements OnInit {
-
+  @Output() transformEvent = new EventEmitter<string>()
+  inputUrl: string = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  load() {
 
+  transform() {
+    this.transformEvent.emit(this.inputUrl)
   }
 }

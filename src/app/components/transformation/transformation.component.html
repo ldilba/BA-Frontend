@@ -15,11 +15,16 @@
   </div>
 
 
-  <app-transformation-custom *ngIf="!inputMethod" #customField></app-transformation-custom>
-  <app-transformation-load *ngIf="inputMethod" #loadField></app-transformation-load>
+  <app-transformation-custom *ngIf="!inputMethod" #customField (transformEvent)="transform($event)"></app-transformation-custom>
+  <app-transformation-load *ngIf="inputMethod" #loadField (transformEvent)="transform($event)"></app-transformation-load>
 
-  <app-transformation-result></app-transformation-result>
-  <div class="button">
-    <app-button text="Save" icon="save" (click)="save()"></app-button>
+  <div class="container-spinner-wrapper">
+    <div class="container-spinner">
+      <ngx-spinner name="transformation-transform-spinner" class="spinner" bdColor="rgba(0,0,0,0)" size="default" color="#009898"
+                   type="ball-clip-rotate-multiple"
+                   [fullScreen]="false"></ngx-spinner>
+    </div>
   </div>
+
+  <app-transformation-result [results]="results"></app-transformation-result>
 </div>

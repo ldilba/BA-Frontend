@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .container{
@@ -15,7 +15,8 @@
   padding: 5px 5px 0;
   font-size: 13px;
   background-color: #F3F3F3;
-
+  height: 175px;
+  overflow: auto;
 }
 
 .list-results{
