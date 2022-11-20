@@ -1,27 +1,43 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
+import {DatasourceService} from "./datasource.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-datasource',
   templateUrl: './datasource.component.html',
   styleUrls: ['./datasource.component.scss']
 })
-export class DatasourceComponent implements OnInit {
+export class DatasourceComponent implements OnInit, DoCheck {
 
-  inputMethod : boolean = false
+  inputMethod: boolean = false
   @ViewChild('inputField') inputField: any;
   @ViewChild('uploadField') uploadField: any;
 
-  constructor() { }
+  constructor(private datasourceService: DatasourceService, private spinner: NgxSpinnerService) {
+  }
 
-  inputMethodChanged($event: boolean):void{
+  inputMethodChanged($event: boolean): void {
     this.inputMethod = $event
   }
 
-  upload(): void{
-    console.log(this.inputField.inputStr)
+  upload(): void {
+    if (this.inputMethod) {
+      this.datasourceService.uploadFile(this.inputField.inputStr)
+    } else {
+      this.datasourceService.uploadText(this.inputField.inputStr)
+    }
+
   }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck(): void {
+    if (this.datasourceService.isLoading) {
+      this.spinner.show("datasource-spinner");
+    } else {
+      this.spinner.hide("datasource-spinner");
+    }
   }
 
 }

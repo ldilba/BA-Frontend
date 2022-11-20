@@ -28,6 +28,7 @@ import {CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ServiceResultComponent } from './components/service/service.result/service.result.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ServiceResultComponent } from './components/service/service.result/serv
     FormsModule,
     NgSelectModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpClientModule
   ],
   providers: [
   ],

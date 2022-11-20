@@ -1,16 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
+import {DatasourceService} from "../datasource/datasource.service";
 
 @Component({
   selector: 'app-transformation',
   templateUrl: './transformation.component.html',
   styleUrls: ['./transformation.component.scss']
 })
-export class TransformationComponent implements OnInit {
+export class TransformationComponent implements OnInit, DoCheck {
 
-  inputMethod : boolean = false
-  inputStr: string = 'What does the "yield" keyword do?\r\nHow to center a div?\r\nMerge two dicts in a single expression.';
+  inputMethod: boolean = false
+  inputStr: string = '';
 
-  constructor() { }
+  constructor(private datasourceService: DatasourceService) {
+  }
+
+  ngDoCheck() {
+    try{
+      this.inputStr = this.datasourceService.response['content']
+    }catch {}
+
+  }
 
   ngOnInit(): void {
   }

@@ -6,13 +6,20 @@
 
   </div>
   <div class="container-toggle">
-    <app-toggle text1="File" text2="Text Input" (stateChangedEvent)="inputMethodChanged($event)"></app-toggle>
+    <app-toggle text1="Text Input" text2="File" (stateChangedEvent)="inputMethodChanged($event)"></app-toggle>
   </div>
 
-  <app-datasource-upload *ngIf="!inputMethod" #uploadField></app-datasource-upload>
-  <app-datasource-input *ngIf="inputMethod" #inputField></app-datasource-input>
+  <app-datasource-input *ngIf="!inputMethod" #inputField></app-datasource-input>
+  <app-datasource-upload *ngIf="inputMethod" #uploadField></app-datasource-upload>
 
-  <div class="button">
-    <app-button text="Upload" icon="upload" (click)="upload()"></app-button>
+  <div class="container-upload">
+    <div class="container-spinner">
+      <ngx-spinner name="datasource-spinner" class="spinner" bdColor="rgba(0,0,0,0)" size="default" color="#009898"
+                   type="ball-clip-rotate-multiple"
+                   [fullScreen]="false"></ngx-spinner>
+    </div>
+    <div class="button">
+      <app-button text="Upload" icon="upload" (click)="upload()"></app-button>
+    </div>
   </div>
 </div>
