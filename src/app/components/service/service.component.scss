@@ -40,11 +40,23 @@
 .container-params{
   width: 100%;
   display: flex;
+  justify-content: space-between;
   margin-top: 20px;
 }
 .label-params{
   margin-left: 20px;
   color: #727272;
+}
+
+.icon-reset{
+  width: 18px;
+  height: 18px;
+  color: #727272;
+  margin-right: 24px;
+  cursor: pointer;
+  &:hover{
+    color: #353535;
+  }
 }
 
 .container-requests{
@@ -87,3 +99,5 @@
   display: flex;
   justify-content: end;
 }
+
+

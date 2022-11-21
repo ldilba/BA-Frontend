@@ -6,9 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./service.result.component.scss']
 })
 export class ServiceResultComponent implements OnInit {
-  @Input() title: string = ''
-  @Input() link: string = ''
-  @Input() content: string = ''
+  @Input() input : any
+  // @Input() title: string = ''
+  // @Input() link: string = ''
+  // @Input() content: string = ''
   isOpen: boolean = false
 
   constructor() {

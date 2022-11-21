@@ -1,4 +1,12 @@
-<textarea [(ngModel)]="transformStr" class="json-input" placeholder='{&#10;  ...&#10;}'></textarea>
+<textarea [(ngModel)]="transformStr" class="json-input" placeholder='{
+  &quot;seperator&quot;: &quot;\n&quot;,
+  &quot;replace&quot;: [
+    {
+      &quot;old&quot;:&quot;&quot;,
+      &quot;new&quot;:&quot;&quot;
+    }
+  ]
+}'></textarea>
 <div class="container-inline">
   <div class="container-right-align">
     <i-feather name="arrow-down" class="icon icon-right-align"></i-feather>

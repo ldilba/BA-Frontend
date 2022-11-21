@@ -18,7 +18,7 @@ export class DatasourceService {
     this.isLoading = true
     this.isSpinnerTriggered = false
     this.http.post<any>('http://localhost:80/upload/text', body, {headers}).subscribe(res => {
-      this.response = JSON.parse(JSON.stringify(res))
+      this.response = res
       this.isLoading = false
       this.isSpinnerTriggered = false
     })

@@ -30,7 +30,6 @@ export class TransformationComponent implements OnInit, DoCheck {
       setTimeout(() => {
         this.spinner.hide("transformation-transform-spinner");
       }, 500)
-
       this.transformationService.isSpinnerTriggered = true
     }
 

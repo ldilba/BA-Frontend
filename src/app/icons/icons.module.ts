@@ -10,7 +10,7 @@ import {
   Zap,
   DownloadCloud,
   ChevronDown,
-  PlusSquare, Play, Download
+  PlusSquare, Play, Download, RotateCcw
 } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
@@ -25,7 +25,8 @@ const icons = {
   ChevronDown,
   PlusSquare,
   Play,
-  Download
+  Download,
+  RotateCcw
 };
 
 @NgModule({

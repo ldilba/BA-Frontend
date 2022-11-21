@@ -5,17 +5,17 @@
     </div>
   </div>
   <div class="content">
-    <app-dropdown [elements]="[{service: 'text-similarity', name:'Text Similarity Analysis'},
-    {service: 'text-recognition', name:'Text Recognition'}]" (changeEvent)="serviceSelected($event)"></app-dropdown>
+    <app-dropdown [elements]="services" (changeEvent)="serviceSelected($event)"></app-dropdown>
     <div class="container-params">
       <span class="label-params">Params</span>
+      <i-feather name="rotate-ccw" class="icon-reset" (click)="resetTable()"></i-feather>
     </div>
 
-    <app-table></app-table>
+    <app-table #tableParams></app-table>
 
     <div class="container-requests">
       <div class="container-spinner">
-        <ngx-spinner class="spinner" bdColor="rgba(0,0,0,0)" size="default" color="#009898" type="ball-clip-rotate-multiple"
+        <ngx-spinner name="service-spinner" class="spinner" bdColor="rgba(0,0,0,0)" size="default" color="#009898" type="ball-clip-rotate-multiple"
                      [fullScreen]="false"></ngx-spinner>
       </div>
       <span *ngIf="queryRunning" class="span-requests">{{currentResponses}} / {{expectedResponses}}</span>
@@ -28,14 +28,7 @@
   </div>
 
   <div class="container-results">
-    <app-service-result title='What does the "yield" keyword do in Python?'
-                        link="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python"
-                        content="To understand what yield does, you must understand what generators are.
-                        And before you can understand generators, you must understand iterables..."></app-service-result>
-    <app-service-result title='What does the "yield" keyword do in Python?'
-                        link="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python"
-                        content="To understand what yield does, you must understand what generators are.
-                        And before you can understand generators, you must understand iterables..."></app-service-result>
+    <app-service-result *ngFor="let r of responses" [input]="r"></app-service-result>
   </div>
 
   <div class="button-download">

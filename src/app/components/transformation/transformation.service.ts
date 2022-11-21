@@ -21,7 +21,7 @@ export class TransformationService {
     this.isSpinnerTriggered = false
 
     this.http.post<any>('http://localhost:80/transform', body, {headers}).subscribe(res => {
-      this.response = JSON.parse(JSON.stringify(res))
+      this.response = res
       this.isLoading = false
       this.isSpinnerTriggered = false
     })

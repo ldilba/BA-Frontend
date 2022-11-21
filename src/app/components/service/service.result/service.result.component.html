@@ -1,13 +1,13 @@
 <div class="header">
   <div class="dropdown" (click)="setOpen()">
-    <span class="title" >{{title}}</span>
+    <span class="title" >{{input.title}}</span>
     <i-feather name="chevron-down" class="icon"></i-feather>
   </div>
 
   <i-feather name="download" class="icon-download"></i-feather>
 </div>
 <div class="container-content">
-  <span *ngIf="isOpen" class="link">{{link}}</span>
-  <span *ngIf="isOpen" class="content">{{content}}</span>
+  <span *ngIf="isOpen" class="link">{{input.link}}</span>
+  <span *ngIf="isOpen" class="content">{{input.content}}</span>
 </div>
 

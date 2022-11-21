@@ -6,7 +6,15 @@ import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild} 
 })
 export class TransformationCustomComponent implements OnInit {
   @Output() transformEvent = new EventEmitter<string>()
-  transformStr: string = '';
+  transformStr: string = '{\n' +
+    '  "seperator": "\\n",\n' +
+    '  "replace": [\n' +
+    '    {\n' +
+    '      "old":"",\n' +
+    '      "new":""\n' +
+    '    }\n' +
+    '  ]\n' +
+    '}';
 
   constructor() {
   }
