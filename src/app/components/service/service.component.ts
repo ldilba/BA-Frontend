@@ -58,6 +58,7 @@ export class ServiceComponent implements OnInit, DoCheck {
       for (const res in this.serviceService.responses) {
         this.responses.push(this.serviceService.responses[res])
       }
+      this.currentResponses = this.responses.length
       this.serviceService.responses = []
       console.log(this.responses)
     }
