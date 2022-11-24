@@ -35,10 +35,10 @@ export class ServiceService {
     this.expectedResponses = expectedResponses
     this.currentResponses = 0
     this.loop = interval(2000).subscribe(x=>{this.poll()})
-    // this.loop = setInterval(this.poll, 2000)
   }
 
   poll() {
+    console.log(this.currentResponses, this.expectedResponses)
     if (this.currentResponses >= this.expectedResponses) {
       this.loop.unsubscribe()
       this.isLoading = false
@@ -48,14 +48,16 @@ export class ServiceService {
     console.log("poll")
     const headers = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJjOWU2M2IyZi03MDVlLTQxMmItOGNhZS0yMWEwOTc0OTkwNmYifQ.35uXt0b4osqWL4TEECiN0UqrsSi708meDqGpSAZ0KAE'}
     this.http.get<any>('http://localhost:80/poll', {headers}).subscribe((res) => {
-      console.log(res)
-      if (res['successful'] == true) {
-        for (const message in res['response']) {
-          this.responses.push(JSON.parse(res['response'][message]))
-        }
-        console.log(this.responses)
 
-        this.currentResponses += res['response'].length
+      if (res['successful'] == true) {
+        for (const message of res['response']) {
+          for(const messageItem of message){
+            console.log(messageItem)
+            this.responses.push(messageItem)
+          }
+        }
+
+        this.currentResponses += this.responses.length
         console.log('current responses: '+this.currentResponses)
       }
     })

@@ -42,6 +42,9 @@ export class ServiceComponent implements OnInit, DoCheck {
 
   serviceSelected($event: string) {
     this.selectedService = $event
+    if ($event == 'text-similarity') {
+      this.tableParams.rows = [{param: "search_size", value: "3"}]
+    }
   }
 
   ngDoCheck(): void {
