@@ -20,7 +20,7 @@ export class ServiceService {
 
   getServices() {
     const headers = {'Authorization': environment.token}
-    return this.http.get<any>(environment.backend_url+'/service', {headers})
+    return this.http.get<any>(environment.backend_url + '/service', {headers})
   }
 
   sendRequests(service: string, params: any) {
@@ -29,13 +29,15 @@ export class ServiceService {
     const body = {service: service, params: params}
     this.isLoading = true
     this.isSpinnerTriggered = false
-    return this.http.post<any>(environment.backend_url+'/send', body, {headers})
+    return this.http.post<any>(environment.backend_url + '/send', body, {headers})
   }
 
   pollResponses(expectedResponses: number) {
     this.expectedResponses = expectedResponses
     this.currentResponses = 0
-    this.loop = interval(2000).subscribe(x=>{this.poll()})
+    this.loop = interval(200).subscribe(x => {
+      this.poll()
+    })
   }
 
   poll() {
@@ -48,18 +50,18 @@ export class ServiceService {
     }
     console.log("poll")
     const headers = {'Authorization': environment.token}
-    this.http.get<any>(environment.backend_url+'/poll', {headers}).subscribe((res) => {
+    this.http.get<any>(environment.backend_url + '/poll', {headers}).subscribe((res) => {
 
       if (res['successful'] == true) {
         for (const message of res['response']) {
-          for(const messageItem of message){
+          for (const messageItem of message) {
             console.log(messageItem)
             this.responses.push(messageItem)
           }
         }
 
         this.currentResponses += this.responses.length
-        console.log('current responses: '+this.currentResponses)
+        console.log('current responses: ' + this.currentResponses)
       }
     })
   }

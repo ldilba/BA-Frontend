@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:18.10
 
 RUN mkdir /usr/src/app
 
