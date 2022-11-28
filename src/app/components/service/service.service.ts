@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {interval} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -18,17 +19,17 @@ export class ServiceService {
   }
 
   getServices() {
-    const headers = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJjOWU2M2IyZi03MDVlLTQxMmItOGNhZS0yMWEwOTc0OTkwNmYifQ.35uXt0b4osqWL4TEECiN0UqrsSi708meDqGpSAZ0KAE'}
-    return this.http.get<any>('http://localhost:80/service', {headers})
+    const headers = {'Authorization': environment.token}
+    return this.http.get<any>(environment.backend_url+'/service', {headers})
   }
 
   sendRequests(service: string, params: any) {
     console.log(service, params)
-    const headers = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJjOWU2M2IyZi03MDVlLTQxMmItOGNhZS0yMWEwOTc0OTkwNmYifQ.35uXt0b4osqWL4TEECiN0UqrsSi708meDqGpSAZ0KAE'}
+    const headers = {'Authorization': environment.token}
     const body = {service: service, params: params}
     this.isLoading = true
     this.isSpinnerTriggered = false
-    return this.http.post<any>('http://localhost:80/send', body, {headers})
+    return this.http.post<any>(environment.backend_url+'/send', body, {headers})
   }
 
   pollResponses(expectedResponses: number) {
@@ -46,8 +47,8 @@ export class ServiceService {
       return
     }
     console.log("poll")
-    const headers = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJjOWU2M2IyZi03MDVlLTQxMmItOGNhZS0yMWEwOTc0OTkwNmYifQ.35uXt0b4osqWL4TEECiN0UqrsSi708meDqGpSAZ0KAE'}
-    this.http.get<any>('http://localhost:80/poll', {headers}).subscribe((res) => {
+    const headers = {'Authorization': environment.token}
+    this.http.get<any>(environment.backend_url+'/poll', {headers}).subscribe((res) => {
 
       if (res['successful'] == true) {
         for (const message of res['response']) {

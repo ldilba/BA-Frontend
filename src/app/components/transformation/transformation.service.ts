@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,13 @@ export class TransformationService {
 
 
   transformCustom(transformString: string) {
-    const headers = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJjOWU2M2IyZi03MDVlLTQxMmItOGNhZS0yMWEwOTc0OTkwNmYifQ.35uXt0b4osqWL4TEECiN0UqrsSi708meDqGpSAZ0KAE'}
+    const headers = {'Authorization': environment.token}
     const body = JSON.parse(transformString)
 
     this.isLoading = true
     this.isSpinnerTriggered = false
 
-    this.http.post<any>('http://localhost:80/transform', body, {headers}).subscribe(res => {
+    this.http.post<any>(environment.backend_url+'/transform', body, {headers}).subscribe(res => {
       this.response = res
       this.isLoading = false
       this.isSpinnerTriggered = false
